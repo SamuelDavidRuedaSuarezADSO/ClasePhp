@@ -1,5 +1,5 @@
 <?php
-class Persona
+class Persona extends Modelo
 {
     // Inicizaciones de los atributos privados
     protected $nombre;
@@ -9,8 +9,8 @@ class Persona
     protected $carrera;
 
     // Constructor
-    function __construct(){
-        // echo "<p>Soy el constructor</p>";
+    function __construct($id, $table, PDO $connection){
+        parent::__construct($id, $table, $connection);
     }
     
     //Metodos GET

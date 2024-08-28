@@ -6,8 +6,8 @@ class Aprendiz extends Persona
     private $cuenta;
     private $promedio;
 
-    function __construct() {
-
+    function __construct(PDO $connection) {
+        parent::__construct('id', 'usuarios', $connection);
     }
 
     function getCuenta(){
