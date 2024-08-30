@@ -1,9 +1,75 @@
+<!-- 
+<form novalidate class="formulario" action="controlls/ingreso.php" method="POST">
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" class="inputs" placeholder="Ingresa tu nombre..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="apell">Apellido:</label>
+        <input type="text" id="apell" name="apell" class="inputs" placeholder="Ingresa tu apellido..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" class="inputs" placeholder="Ingresa tu edad..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="genero">Genero:</label>
+        <input type="text" id="genero" name="genero" class="inputs" placeholder="Ingresa tu genero..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="carr">Carrera:</label>
+        <input type="text" id="carr" name="carr" class="inputs" placeholder="Ingresa tu carrera..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="cuenta">Cuenta:</label>
+        <input type="text" id="cuenta" name="cuenta" class="inputs" placeholder="Ingresa tu cuenta..." autocomplete="off" require>
+    </div>
+    <div>
+        <label for="prom">Promedio:</label>
+        <input type="number" id="prom" name="prom" class="inputs" placeholder="Ingresa tu promedio..." autocomplete="off" require>
+    </div>
+    <button type="submit">Enviar</button>
+</form> -->
+
+
 <?php
-require_once __DIR__.'/libs/Database.php';
-require_once __DIR__.'/libs/Modelo.php';
+require_once('services/mail.php');
+
+$messaje = "jhon dehe la pereza";
+$dubject = "Enviando un correo electronico";
+$body = "persona que se dedica a la imprenta) desconocido usó una galería de textos";
+$correo = "samueldavidruedasuarez3@gmail.com";
+$mail = new Mail($correo, $dubject, $messaje, $body);
+$mail->send();
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// require_once __DIR__.'/libs/Database.php';
+// require_once __DIR__.'/libs/Modelo.php';
 // include_once ("clases/Persona.php"); // importamos Persona.php
 // include_once ("clases/Instructor.php"); // importamos Instructor.php
-include_once ("clases/Aprendiz.php"); // importamos Aprendiz.php
+// include_once ("clases/Aprendiz.php"); // importamos Aprendiz.php
 
 
 // $persona = new Aprendiz; // Instaciamos un nuevo Objeto Pesona
@@ -19,28 +85,49 @@ include_once ("clases/Aprendiz.php"); // importamos Aprendiz.php
 // echo "<br>";
 // echo $persona->miPromedio(); // echo para mostrar el contrnido
 // echo "<br>"; // echo tambien sirver agrandole etiquetas htlm
-// var_dump($persona->saludar()); // var_dump par mostrar el contenido y el tipo de dato
+// // var_dump($persona->saludar()); // var_dump par mostrar el contenido y el tipo de dato
 
-$database = new Database();
-$connection = $database->getConection();
+// $database = new Database();
+// $connection = $database->getConection();
 
-$aprendiz = new Aprendiz($connection);
-$resul = $aprendiz->getAll();
+// $aprendiz = new Aprendiz($connection);
 
-foreach ($resul as $key => $value) {
-    echo $value['nombre']." " .$value['apellido']."<br>";
-}
 
-$respuesteId = $aprendiz->getById(5);
+// $respuesteId = $aprendiz->getById(1);
 
-echo "<br>";
-echo $respuesteId['nombre']." " .$respuesteId['apellido']."<br>";
-echo "<br>";
+// // echo "<br>";
+// // echo $respuesteId['nombre']." " .$respuesteId['apellido']."<br>";
+// // echo "<br>";
 
-$ingresar = $aprendiz->setValues("Yesid", "Pabon", 20, "Masculino", "ADSO", "2673126", 4.5);
+// // $ingresar = $aprendiz->setValues("Yesid", "Pabon", 20, "Masculino", "ADSO", "2673126", 4.5);
 
-echo $ingresar;
-$close = $database->closeConection();
+// // echo $ingresar;
+
+// // $aprendiz->store([
+// //     'nombre'   => 'Carlos',
+// //     'apellido' => 'Garcia',
+// //     'edad'     => 18,
+// //     'genero'   => 'Masculino',
+// //     'carrera'  => 'ADSO'
+// // ]);
+    
+
+// $aprendiz->delete(11);
+
+// // $aprendiz->update(5, [
+// //     'nombre' => 'Samie',
+// //     'apellido' => 'Ariza',
+// //     'edad' => '28'
+// // ]);
+
+// $resul = $aprendiz->getAll();
+// echo "id | nombre | apellido <br>";
+// foreach ($resul as $key => $value) {
+//     echo $value['id']. " | " .$value['nombre']." | " .$value['apellido']."<br>";
+// }
+
+// $close = $database->closeConection();
+// ?> 
 
 
 
