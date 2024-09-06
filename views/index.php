@@ -35,10 +35,10 @@
 <?php
 // require_once('services/mail.php');
 
-// $path = $_SERVER['SCRIPT_NAME'];
-// $url = $_SERVER['REQUEST_URI'];
-// $b = substr($url, strlen($path));
-// echo $url . " - " . $path . " - " . $b ;
+$path = $_SERVER['SCRIPT_NAME'];
+$url = $_SERVER['REQUEST_URI'];
+$b = substr($url, strlen($path));
+echo $url . " - " . $path . " - " . $b ;
 
 
 
