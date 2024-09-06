@@ -22,25 +22,32 @@
     </div>
     <div>
         <label for="cuenta">Cuenta:</label>
-        <input type="text" id="cuenta" name="cuenta" class="inputs" placeholder="Ingresa tu cuenta..." autocomplete="off" require>
+        <input type="text" id="cuenta" name="cuenta" class="inputs" placeholder="Ingresa tu cuenta..." autocomplete="off" >
     </div>
     <div>
         <label for="prom">Promedio:</label>
-        <input type="number" id="prom" name="prom" class="inputs" placeholder="Ingresa tu promedio..." autocomplete="off" require>
+        <input type="number" id="prom" name="prom" class="inputs" placeholder="Ingresa tu promedio..." autocomplete="off" >
     </div>
     <button type="submit">Enviar</button>
 </form> -->
 
 
 <?php
-require_once('services/mail.php');
+// require_once('services/mail.php');
 
-$messaje = "jhon dehe la pereza";
-$dubject = "Enviando un correo electronico";
-$body = "persona que se dedica a la imprenta) desconocido usó una galería de textos";
-$correo = "samueldavidruedasuarez3@gmail.com";
-$mail = new Mail($correo, $dubject, $messaje, $body);
-$mail->send();
+// $path = $_SERVER['SCRIPT_NAME'];
+// $url = $_SERVER['REQUEST_URI'];
+// $b = substr($url, strlen($path));
+// echo $url . " - " . $path . " - " . $b ;
+
+
+
+// $messaje = "jhon dehe la pereza";
+// $dubject = "Enviando un correo electronico";
+// $body = "Hola a todos, (mundo)";
+// $correo = "samueldavidruedasuarez3@gmail.com";
+// $mail = new Mail($correo, $dubject, $messaje, $body);
+// $mail->send();
  
 
 
